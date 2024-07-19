@@ -1,0 +1,102 @@
+<% layout("/layouts/boilerplate.ejs")%>
+
+<div class="row">
+	<div class="col-8 offset-3"></div>
+	<h2 class="new-head">Create New Listing</h2>
+	<form
+		method="POST"
+		action="/listings"
+		class="needs-validation"
+		novalidate
+		enctype="multipart/form-data">
+		<div class="mb-3">
+			<label
+				for="title"
+				class="form-label"
+				>Title</label
+			>
+			<input
+				name="Listing[title]"
+				type="text"
+				placeholder="Enter title"
+				class="form-control"
+				required />
+			<div class="invalid-feedback">Enter a title</div>
+		</div>
+		<div class="mb-3">
+			<label
+				for="description"
+				class="form-label"
+				>Description</label
+			>
+			<textarea
+				name="Listing[description]"
+				placeholder="Enter description"
+				class="form-control"
+				required></textarea>
+			<div class="invalid-feedback">Enter a short description</div>
+		</div>
+		<div class="mb-3">
+			<label
+				for="url"
+				class="form-label"
+				>Upload image</label
+			>
+			<input
+				type="file"
+				name="Listing[image][url]"
+				placeholder="Enter image link/url"
+				class="form-control" />
+		</div>
+		<div class="row">
+			<div class="mb-3 col-md-4">
+				<label
+					for="price"
+					class="form-label"
+					>Price</label
+				>
+				<input
+					name="Listing[price]"
+					placeholder="1200"
+					class="form-control"
+					required />
+				<div class="invalid-feedback">Enter price</div>
+			</div>
+			<div class="mb-3 col-md-8">
+				<label
+					for="country"
+					class="form-label"
+					>Country</label
+				>
+				<input
+					name="Listing[country]"
+					type="text"
+					placeholder="India"
+					class="form-control"
+					required />
+				<div class="invalid-feedback">Enter a valid country</div>
+			</div>
+		</div>
+
+		<div class="mb-3">
+			<label
+				for="location"
+				class="form-label"
+				>Location</label
+			>
+			<input
+				name="Listing[location]"
+				type="text"
+				placeholder="Jaipur, Rajasthan"
+				class="form-control"
+				required />
+			<div class="invalid-feedback">Enter a valid location</div>
+		</div>
+
+		<button
+			class="btn btn-dark add-btn"
+			type="submit">
+			Add
+		</button>
+	</form>
+</div>

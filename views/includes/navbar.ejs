@@ -1,0 +1,89 @@
+<style>
+	.btn-search {
+		background-color: #fe424d;
+		border-radius: 50%;
+		color: white;
+	}
+	.btn-search:hover {
+		background-color: #fe424d;
+		color: white;
+	}
+	.search-inp {
+		width: 30rem;
+		border-radius: 3rem;
+	}
+	.myclass {
+		color: #fe424d;
+		font-weight: 700;
+	}
+</style>
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+	<div class="container-fluid">
+		<a
+			class="navbar-brand"
+			href="/listings"
+			><p class="myclass">WANDERLAND</p>
+		</a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarNavAltMarkup">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div
+			class="collapse navbar-collapse"
+			id="navbarNavAltMarkup">
+			<!-- <div class="navbar-nav">
+				<a
+					class="nav-link"
+					href="/listings"
+					><b>Explore</b></a
+				>
+			</div> -->
+			<div class="navbar-nav ms-auto">
+				<form
+					class="d-flex"
+					role="search">
+					<input
+						class="form-control me-2 search-inp"
+						type="search"
+						placeholder="Search Destinations"
+						aria-label="Search" />
+
+					<button
+						class="btn btn-search"
+						type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</form>
+			</div>
+			<div class="navbar-nav ms-auto">
+				<a
+					class="nav-link"
+					href="/listings/new"
+					><b>List your property</b></a
+				>
+
+				<% if(!currUser) { %>
+				<a
+					class="btn btn-dark nav-btn me-md-2"
+					href="/signup"
+					>signup</a
+				>
+				<a
+					class="btn btn-dark nav-btn me-md-2"
+					href="/login"
+					>login</a
+				>
+				<%}%> <% if(currUser) { %>
+				<a
+					class="btn btn-outline-dark nav-outline me-md-2"
+					href="/logout"
+					>logout</a
+				>
+				<%}%>
+			</div>
+		</div>
+	</div>
+</nav>
